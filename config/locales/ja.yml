@@ -7,9 +7,8 @@ ja:
         password_confirmation: パスワード(確認用)
       post:
         title: スレッドタイトル
-        body: 本文
       comment:
-        response: コメント
+        body: コメント
       team:
         current_password: 現在のパスワード
         email: メールアドレス

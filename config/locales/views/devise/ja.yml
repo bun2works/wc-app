@@ -2,14 +2,15 @@ ja:
   teams:
     registrations:
       edit:
-        account_delete: チームを削除する
+        account_delete: チームを削除
+        delete_account: チーム削除
         back: 戻る
         change_email: 変更しない場合は空白のままにしてください。
         confirm: チーム削除
         current_pass_message: 変更を承認する為に必要です。
-        delete_account: チーム削除
         log_out: ログアウト
         minimum_password_length: "%{length}文字以上を入力して下さい"
+        no_hp: ない場合は空白のままにしてください。
         posts_index: スレッド一覧
         teams_index: チーム一覧
         title: チーム編集
@@ -17,7 +18,7 @@ ja:
       new:
         log_in: ログイン
         minimum_password_length: "%{length}文字以上を入力してください。"
-        unless_hp: ない場合は空白のままにしてください。
+        no_hp: ない場合は空白のままにしてください。
         sign_up: チーム登録
         title: チーム登録
     sessions:

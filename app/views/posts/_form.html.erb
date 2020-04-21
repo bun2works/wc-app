@@ -2,11 +2,7 @@
 <%= form_with model: post, local:true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control", rows: "7" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: "form-control", rows: "7" %>
+    <%= f.text_field :title, placeholder: "必須 (100文字以内)", class: "form-control", rows: "7" %>
   </div>
   <p>
     <%= f.submit t(".post"), class: "btn btn-block btn-primary" %>

@@ -1,0 +1,78 @@
+<div class="container mb-5">
+  <div class="row justify-content-center my-5">
+    <%= link_to t(".teams_index"), teams_path, class: "btn-lg btn-secondary col-3 text-center" %>
+    <div class="btn-lg btn-primary col-3 text-center shadow mx-1"><%= t(".title") %></div>
+    <%= link_to t(".posts_index"), posts_path, class: "btn-lg btn-secondary col-3 text-center" %>
+  </div>
+
+  <div class="col-md-7 mx-auto">
+    <%= render "shared/errors", obj: @team %>
+
+    <div class="col-lg-11 mx-auto">
+      <% if @team.image.attached? %>
+        <%= image_tag current_team.image.variant(resize_to_fill: [600, 400]).processed, class: "img-fluid rounded shadow mb-2" %>
+      <% else %>
+        <%= image_tag "no_image", class: "img-fluid rounded mb-2" %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "mb-4" }) do |f| %>
+        <div class="form-group mt-4">
+          <%= f.label :image %>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, autocomplete: "name", placeholder: "必須", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :representative %>
+          <%= f.text_field :representative, autocomplete: "representative", placeholder: "必須", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :homepage %><i>(<%= t ".no_hp" %>)</i>
+          <%= f.text_field :homepage, autocomplete: "homepage", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_field :location, autocomplete: "location", placeholder: "必須 (例: 埼玉県○○市 ○曜日)", class: "form-control" %>
+        </div>
+        <div class="form-froup mb-3">
+          <%= f.label :introduction %><br />
+          <%= f.text_area :introduction, autocomplete: "introduction", placeholder: "必須 (100文字以内)", class: "form-control" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :password %><i>(<%= t ".change_email" %>)</i>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+          <%# if @minimum_password_length %>
+            <em><%#= t(".minimum_password_length", length: @minimum_password_length) %></em>
+          <%# end %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :current_password %><i>(<%= t ".current_pass_message" %>)</i>
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+        <p class="actions">
+          <%= f.submit t(".update"), class: "btn btn-block btn-primary shadow my-4" %>
+        </p>
+      <% end %>
+    </div>
+
+    <h5 class="mt-5"><%= t ".delete_account" %></h5>
+    <p>
+      <%= link_to t(".account_delete"), registration_path(resource_name), data: { confirm: "チーム(投稿含む)を削除してよろしいですか？" }, method: :delete, class: "btn btn-block btn-danger shadow" %>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+ja:
+  teams:
+    registrations:
+      edit:
+        account_delete: チームを削除
+        delete_account: チーム削除
+        back: 戻る
+        change_email: 変更しない場合は空白のままにしてください。
+        confirm: チーム削除
+        current_pass_message: 変更を承認する為に必要です。
+        log_out: ログアウト
+        minimum_password_length: "%{length}文字以上を入力して下さい"
+        no_hp: ない場合は空白のままにしてください。
+        posts_index: スレッド一覧
+        teams_index: チーム一覧
+        title: チーム編集
+        update: 更新
+      new:
+        log_in: ログイン
+        minimum_password_length: "%{length}文字以上を入力してください。"
+        no_hp: ない場合は空白のままにしてください。
+        sign_up: チーム登録
+        title: チーム登録
+    sessions:
+      new:
+        log_in: ログイン
+        sign_up: チーム登録
+        title: ログイン
+    index:
+      create_post: スレッド作成
+      my_team: マイチーム
+      posts_index: スレッド一覧
+      title: チーム一覧
+    show:
+      edit: 編集
+      log_out: ログアウト
+      posts_index: スレッド一覧
+      team_hp: チームのページへ
+      teams_index: チーム一覧
+      team_posts: チームスレッド
+      title: チーム詳細

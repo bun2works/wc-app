@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    attributes:
+      admin_user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+      post:
+        title: スレッドタイトル
+      comment:
+        body: コメント
+      team:
+        current_password: 現在のパスワード
+        email: メールアドレス
+        homepage: ホームページ
+        image: チーム画像
+        introduction: チーム紹介
+        location: 場所・曜日
+        name: チーム名
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        representative: 代表者名
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."

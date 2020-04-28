@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="content"> <%# contentはcssの設定 %>
+      <%= render "shared/header" %>
+      <div class="col-12 col-lg-10 mx-auto">
+        <div class="container">
+          <%= render "shared/flash" %>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>

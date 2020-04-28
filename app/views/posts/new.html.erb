@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <%= link_to t(".teams_index"), teams_path, class: "btn-lg btn-secondary col-3 text-center" %>
+    <div class="btn-lg btn-primary col-3 text-center shadow mx-1"><%= t(".title") %></div>
+    <%= link_to t(".posts_index"), posts_path, class: "btn-lg btn-secondary col-3 text-center" %>
+  </div>
+
+  <div class="col-lg-10 mx-auto">
+    <%= render "form", post: @post %>
+  </div>
+</div>

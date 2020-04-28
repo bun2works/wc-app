@@ -48,7 +48,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: wc_app_production
-  username: wc_app
-  password: <%= ENV['WC_APP_DATABASE_PASSWORD'] %>
+  adapter: postgresql

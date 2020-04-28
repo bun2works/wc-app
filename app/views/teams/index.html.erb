@@ -12,7 +12,7 @@
           <% if team.image.attached? %>
             <%= image_tag team.image.variant(resize_to_fill: [600, 400]).processed, class: "card-img-top img-fluid" %>
           <% else %>
-            <%= asset_path "no_image", class: "card-img-top img-fluid" %>
+            <%= image_tag asset_path("no_image"), class: "card-img-top img-fluid" %>
           <% end %>
         <% end %>
         <div class="card-body">

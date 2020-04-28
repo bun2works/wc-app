@@ -1,11 +1,12 @@
-<div class="container-fluid">
-  <div class="row justify-content-center mt-5 mb-4">
+<div class="container">
+  <div class="row justify-content-center my-5">
     <%= link_to t(".teams_index"), teams_path, class: "btn-lg btn-secondary col-3 text-center" %>
-    <div class="btn-lg btn-primary col-3 text-center mx-1"><%= t(".title") %></div>
+    <div class="btn-lg btn-primary col-3 text-center shadow mx-1"><%= t(".title") %></div>
     <%= link_to t(".posts_index"), posts_path, class: "btn-lg btn-secondary col-3 text-center" %>
   </div>
 
-  <div class="container-fuluid">
+  <div class="col-lg-10 mx-auto">
+    <%= render "shared/errors", obj: @comment %>
     <div class="row mb-2">
       <%= link_to team_path(@post.team) do %>
         <% if @post.team.image.attached? %>
@@ -16,42 +17,42 @@
           <%= @post.team.name %>
       <% end %>
     </div>
-  </div>
 
-  <div class="card mb-5">
-    <div class="card-header bg-transparent ">
-      <div class="row justify-content-between px-3">
-        <p>タイトル</p>
-        <p><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-      </div>
-      <p class="mx-4"><%= @post.title %></p>
-    </div>
-
-    <div class="card-body">
-      <p>コメント (全<%= @post.comments.count %>件</p>
-      <% @post.comments.each do |comment| %>
-        <div class="row justify-content-between align-items-baseline px-3">
-          <div>
-            <% if comment.team.image.attached? %>
-              <%= image_tag comment.team.image.variant(resize_to_fill: [30, 30]).processed, class: "img-fluid rounded-circle mr-1" %>
-            <% else %>
-              <i class="fas fa-user-circle fa-2x mr-1"></i>
-            <% end %>
-            <%= link_to comment.team.name %>
-          </div>
-          <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-transparent ">
+        <div class="row justify-content-between px-3">
+          <p>タイトル</p>
+          <p><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
         </div>
-        <p class="mx-4"><%= comment.body %></p>
-      <% end %>
-      <hr>
+        <%= simple_format (@post.title), class: "mx-4" %>
+      </div>
+  
+      <div class="card-body">
+        <p>コメント (全<%= @post.comments.count %>件)</p>
+        <% @post.comments.each do |comment| %>
+          <hr>
+          <div class="row justify-content-between align-items-baseline px-3">
+            <div>
+              <% if comment.team.image.attached? %>
+                <%= image_tag comment.team.image.variant(resize_to_fill: [30, 30]).processed, class: "img-fluid rounded-circle mr-1" %>
+              <% else %>
+                <i class="fas fa-user-circle fa-2x mr-1"></i>
+              <% end %>
+              <%= link_to comment.team.name %>
+            </div>
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </div>
+          <%= simple_format (comment.body), class: "mx-4 mt-2" %>
+        <% end %>
+      </div>
     </div>
-  </div>
-
-  <div class="mb-5">
-    <%= form_with model: @comment, url: comments_path, class: "row mx-auto ", local: true do |f| %>
-      <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_field :response, class: "col-10 form-control", placeholder: "コメント投稿" %>
-      <%= f.submit t(".submit"), class: "col-2" %>
-    <% end %>
+  
+    <div class="mb-5">
+      <%= form_with model: @comment, url: comments_path, class: "row mx-auto ", local: true do |f| %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.text_area :body, class: "form-control px-4 mb-1", placeholder: "コメント入力(300文字以内)" %>
+        <%= f.submit t(".submit"), class: "btn btn-block btn-primary shadow" %>
+      <% end %>
+    </div>
   </div>
 </div>

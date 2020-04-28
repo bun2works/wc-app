@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_team!
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :show]
 
   def index
     @comment = Comment.new

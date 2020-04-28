@@ -1,10 +1,10 @@
-<div class="container-fluid mb-5">
+<div class="container mb-5">
   <div class="row justify-content-center mt-5 mb-4">
-    <div class="btn-lg btn-primary col-3 text-center"><%= t(".title") %></div>
-    <%= link_to t(".sign_up"), new_registration_path(resource_name), class: "btn-lg btn-secondary col-3 text-center mx-1" %>
+    <div class="btn-lg btn-primary col-5 col-md-3 text-center shadow"><%= t(".title") %></div>
+    <%= link_to t(".sign_up"), new_registration_path(resource_name), class: "btn-lg btn-secondary col-5 col-md-3 text-center mx-1" %>
   </div>
 
-  <div class="col-lg-6 mx-auto">
+  <div class="col-md-8 mx-auto">
     <%= render "shared/errors", obj: @team %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,7 +19,7 @@
       </div>
   
       <p class="actions">
-        <%= f.submit t(".log_in"), class: "btn btn-block btn-primary mt-5" %>
+        <%= f.submit t(".log_in"), class: "btn btn-block btn-primary shadow mt-5" %>
       </p>
     <% end %>
   </div>

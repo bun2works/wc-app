@@ -1,8 +1,8 @@
 Faker::Config.locale = :ja
 
 unless Rails.env.production?
-  # 50件のデータを用意する
-  TEAM_MAX = 50
+  # 60件のデータを用意する
+  TEAM_MAX = 60
   team_attrs = Proc.new do
     Array.new(TEAM_MAX) do |idx|
       { id: idx + 1,
@@ -11,7 +11,7 @@ unless Rails.env.production?
         name: Faker::Name.name + 'VC',
         representative: Faker::Name.name,
         homepage: Faker::Lorem.paragraph,
-        location_and_day: Faker::Lorem.paragraph,
+        location: Faker::Lorem.paragraph,
         introduction: Faker::Lorem.paragraph,
         password: 'password',
         password_confirmation: 'password'

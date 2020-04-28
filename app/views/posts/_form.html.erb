@@ -1,13 +1,10 @@
 <%= render "shared/errors", obj: post %>
 <%= form_with model: post, local:true do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: "必須 (100文字以内)", class: "form-control", rows: "7" %>
+  <div class="form-group mb-4">
+    <h4><%= f.label :title %></h4>
+    <%= f.text_area :title, placeholder: "必須 (100文字以内)", class: "form-control", rows: "5" %>
   </div>
   <p>
-    <%= f.submit t(".post"), class: "btn btn-block btn-primary" %>
-  </p>
-  <p>
-    <%= link_to t(".back"), :back, class: "btn btn-block btn-secondary" %>
+    <%= f.submit t(".post"), class: "btn btn-block btn-primary shadow" %>
   </p>
 <% end %>

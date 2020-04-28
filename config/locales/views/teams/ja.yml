@@ -32,7 +32,8 @@ ja:
       posts_index: スレッド一覧
       title: チーム一覧
     show:
-      edit: 編集・ログアウト
+      edit: 編集
+      log_out: ログアウト
       posts_index: スレッド一覧
       team_hp: チームのページへ
       teams_index: チーム一覧

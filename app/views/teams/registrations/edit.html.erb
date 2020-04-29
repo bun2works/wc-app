@@ -12,7 +12,7 @@
       <% if @team.image.attached? %>
         <%= image_tag current_team.image.variant(resize_to_fill: [600, 400]).processed, class: "img-fluid rounded shadow mb-2" %>
       <% else %>
-        <%= image_tag asset_path('no_image.png'), class: "img-fluid rounded mb-2" %>
+        <%= image_tag asset_path("no_image.png"), class: "img-fluid rounded mb-2" %>
       <% end %>
     </div>
 

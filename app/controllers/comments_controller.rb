@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_team.comments.new(comment_params)
     if @comment.save
-      redirect_to post_path(@comment.post), notice: "投稿しました。"
+      redirect_to posts_path, notice: "投稿しました。"
     else
       render template: "posts/index"
     end

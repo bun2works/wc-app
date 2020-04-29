@@ -14,14 +14,8 @@
           <%= image_tag asset_path("no_image.png"), class: "img-fluid rounded shadow mb-3" %>
         <% end %>
         <% if @team.id == current_team.id %>
-          <%# <div class="row"> %>
-            <%# <div class="col-6"> %>
               <%= link_to t(".edit"), edit_team_registration_path(@team), class: " btn btn-block btn-primary shadow-sm mb-3" %>
-            <%# </div> %>
-            <%# <div class="col-6"> %>
               <%= link_to t(".log_out"), destroy_team_session_path, method: :delete, class: "btn btn-block btn-secondary shadow-sm" %>
-            <%# </div> %>
-          <%# </div> %>
         <% end %>
       </div>  
 

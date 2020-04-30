@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row justify-content-center my-5">
     <div class="btn-lg btn-primary col-3 text-center shadow"><%= t(".title") %></div>
-    <%= link_to t(".my_team"), team_path(current_team.id), class: "btn-lg btn-secondary col-3 text-center mx-1" %>
+    <% if team_signed_in? %>
+      <%= link_to t(".my_team"), team_path(current_team.id), class: "btn-lg btn-secondary col-3 text-center mx-1" %>
+    <% else %>
+      <%= link_to t(".my_team"), team_session_path, class: "btn-lg btn-secondary col-3 text-center mx-1" %>
+    <% end %>
     <%= link_to t(".posts_index"), posts_path, class: "btn-lg btn-secondary col-3 text-center" %>
   </div>
 

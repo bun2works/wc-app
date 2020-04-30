@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_team!
+  before_action :authenticate_team!, except: [:index, :show]
 
   def index
     @teams = Team.with_attached_image.order(updated_at: :desc).page(params[:page]).per(18)

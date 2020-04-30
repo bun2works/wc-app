@@ -9,9 +9,10 @@
     <%= link_to t(".posts_index"), posts_path, class: "btn-lg btn-secondary col-3 text-center" %>
   </div>
 
-  <div class="row row-cols-sm-2 row-cols-lg-3">
+  <div class="row no-gutters">
+  <%# <div class="row row-cols-md-2 row-cols-lg-3"> %>
     <% @teams.each do |team| %>
-      <div class="card shadow-sm mb-2">
+      <div class="card col-sm-6 col-lg-4 mb-2">
         <%= link_to team do %>
           <% if team.image.attached? %>
             <%= image_tag team.image.variant(resize_to_fill: [600, 400]).processed, class: "card-img-top img-fluid" %>

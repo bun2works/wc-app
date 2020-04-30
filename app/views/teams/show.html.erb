@@ -7,7 +7,7 @@
 
   <div class="col-sm-12 col-lg-10 mx-auto">
     <div class="row mt-5 mb-5">
-      <div class="col-12 col-sm-6">
+      <div class="col-sm-6">
         <% if @team.image.attached? %>
           <%= image_tag @team.image.variant(resize_to_fill: [600, 400]).processed, class: "img-fluid rounded shadow mb-3" %>
         <% else %>
@@ -19,7 +19,7 @@
         <% end %>
       </div>  
 
-      <div class="col-12 col-sm-6 mt-4">
+      <div class="col-sm-6 mt-4">
         <h3 class="mb-4"><%= @team.name %></h3>
         <div class="row">
           <p class="col-2 text-center px-0">代表:</p>
